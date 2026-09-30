@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CivicConnect - Report Public Problems</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+    <div class="logo">
+        CivicConnect
+    </div>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/">Report Problem</a>
+        <a href="/track">Track Complaint</a>
+        <a href="/about">About</a>
+    </nav>
+
+</header>
+
+
+    <main class="container">
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <h1>Welcome to CivicConnect</h1>
+
+                <p>
+                    Report public problems, track complaints,
+                    and help improve your community.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="report-box">
+
+            <h2>Report a Public Problem</h2>
+
+            <p class="form-intro">
+                Tell us about a problem in your area and help
+                authorities take action.
+            </p>
+
+
+            <form action="/submit" method="POST">
+
+                <div class="form-group">
+
+                    <label for="problem_type">
+                        Problem Type
+                    </label>
+
+                    <select
+                        id="problem_type"
+                        name="problem_type"
+                        required>
+
+                        <option value="">
+                            Select a problem
+                        </option>
+
+                        <option value="Pothole">
+                            Pothole
+                        </option>
+
+                        <option value="Garbage">
+                            Garbage
+                        </option>
+
+                        <option value="Streetlight">
+                            Streetlight
+                        </option>
+
+                        <option value="Water Problem">
+                            Water Problem
+                        </option>
+
+                        <option value="Road Damage">
+                            Road Damage
+                        </option>
+
+                        <option value="Traffic Problem">
+                            Traffic Problem
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="description">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="description"
+                        name="description"
+                        placeholder="Describe the problem..."
+                        required></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="location">
+                        Location
+                    </label>
+
+                    <input
+                        type="text"
+                        id="location"
+                        name="location"
+                        placeholder="Enter the problem location"
+                        required>
+
+                </div>
+
+
+                <button type="submit">
+                    Submit Report
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <section class="info-section">
+
+            <div class="info-card">
+                <h3>📢 Report</h3>
+                <p>
+                    Report potholes, garbage, damaged roads,
+                    streetlights and other public problems.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>🔎 Track</h3>
+                <p>
+                    Use your complaint Tracking ID to check
+                    the status of your report.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>🏙️ Improve</h3>
+                <p>
+                    Work together to create cleaner,
+                    safer and better communities.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 CivicConnect | Community Problem Reporting System
+        </p>
+
+    </footer>
+
+</body>
+</html>

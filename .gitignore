@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+civicconnect.db
+civicconnect_backup.db
+civicconnect_before_deployment.db
+.env
+app.py.txt 
+templates/index.html.txt 

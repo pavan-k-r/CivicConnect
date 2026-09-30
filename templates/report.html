@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Report Problem - CivicConnect</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+
+            <h2 class="logo">CivicConnect</h2>
+
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/submit">Report Problem</a>
+                <a href="/track">Track Complaint</a>
+                <a href="/about">About</a>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- Report Section -->
+    <section class="report-section">
+
+        <div class="report-container">
+
+            <h1>Report a Public Problem</h1>
+
+            <p class="report-intro">
+                Tell us about a problem in your area and help authorities take action.
+            </p>
+
+
+            <!-- Report Form -->
+            <form action="/submit" method="POST">
+
+                <div class="form-group">
+
+                    <label for="problem_type">
+                        Problem Type
+                    </label>
+
+                    <select id="problem_type"
+                            name="problem_type"
+                            required>
+
+                        <option value="">Select a problem</option>
+
+                        <option value="Pothole">Pothole</option>
+
+                        <option value="Garbage">Garbage</option>
+
+                        <option value="Damaged Road">
+                            Damaged Road
+                        </option>
+
+                        <option value="Streetlight">
+                            Streetlight
+                        </option>
+
+                        <option value="Water Problem">
+                            Water Problem
+                        </option>
+
+                        <option value="Traffic Problem">
+                            Traffic Problem
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="description">
+                        Description
+                    </label>
+
+                    <textarea id="description"
+                              name="description"
+                              rows="5"
+                              placeholder="Describe the problem..."
+                              required></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="location">
+                        Location
+                    </label>
+
+                    <input type="text"
+                           id="location"
+                           name="location"
+                           placeholder="Enter the problem location"
+                           required>
+
+                </div>
+
+
+                <button type="submit" class="primary-button">
+                    Submit Report
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 CivicConnect | Community Problem Reporting System
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

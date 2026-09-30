@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CivicConnect - Authority Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Authority Dashboard</h1>
+
+        <p>View and manage citizen complaints submitted through CivicConnect.</p>
+        <p>
+        <a href="/authority/logout">Logout</a>
+        </p>
+
+        {% if complaints %}
+
+        <div class="complaint-card">
+
+            <h2>Submitted Complaints</h2>
+
+            <table>
+                <tr>
+                    <th>Tracking ID</th>
+                    <th>Problem</th>
+                    <th>Description</th>
+                    <th>Location</th>
+                    <th>Status</th>
+                </tr>
+
+                {% for complaint in complaints %}
+                <tr>
+                    <td>{{ complaint["tracking_id"] }}</td>
+                    <td>{{ complaint["problem_type"] }}</td>
+                    <td>{{ complaint["description"] }}</td>
+                    <td>{{ complaint["location"] }}</td>
+                    <td>
+    <form method="POST" action="/update_status/{{ complaint['tracking_id'] }}">
+        <select name="status" onchange="this.form.submit()">
+            <option value="Submitted" {% if complaint["status"] == "Submitted" %}selected{% endif %}>Submitted</option>
+<option value="In Progress" {% if complaint["status"] == "In Progress" %}selected{% endif %}>In Progress</option>
+<option value="Resolved" {% if complaint["status"] == "Resolved" %}selected{% endif %}>Resolved</option>
+        </select>
+    </form>
+</td>
+                </tr>
+                {% endfor %}
+
+            </table>
+
+        </div>
+
+        {% else %}
+
+        <div class="complaint-card">
+            <h2>No complaints yet</h2>
+            <p>There are currently no complaints submitted.</p>
+        </div>
+
+        {% endif %}
+
+        <br>
+
+        <a href="/">← Back to CivicConnect</a>
+
+    </div>
+
+</body>
+</html>
