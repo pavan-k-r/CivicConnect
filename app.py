@@ -35,7 +35,7 @@ def create_database():
     connection.commit()
     connection.close()
 
-
+create_database()
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -194,5 +194,4 @@ def update_status(tracking_id):
 
     return redirect("/authority")
 if __name__ == "__main__":
-    create_database()
     app.run()
