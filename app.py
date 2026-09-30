@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request, session, redirect
 import sqlite3
 import uuid
+import os
 
 app = Flask(__name__)
-app.secret_key = "civicconnect-production-secrect-key-2026"
+app.secret_key = os.environ.get("SECRET_KEY")
 
 
 def create_database():
