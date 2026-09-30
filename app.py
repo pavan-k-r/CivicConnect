@@ -140,7 +140,7 @@ def authority_login():
         username = request.form["username"]
         password = request.form["password"]
 
-        if username == "admin" and password == "civicconnect2026":
+        if username == os.environ.get("AUTHORITY_USERNAME") and password == os.environ.get("AUTHORITY_PASSWORD"):
             session["authority_logged_in"] = True
             return redirect("/authority")
 
